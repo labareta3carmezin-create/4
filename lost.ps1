@@ -3,7 +3,7 @@ Add-Type -AssemblyName PresentationFramework, System.Windows.Forms, System.Drawi
 $xml = @"
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LOST ENGINE | SUPREME TWEAKS (WIN 10/11)" Height="850" Width="1200" Background="#121317">
+        Title="LOST ENGINE | SUPREME TWEAKS" Height="850" Width="1200" Background="#121317" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -13,19 +13,18 @@ $xml = @"
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#1c1e26">
-            <Button Content="Install" Width="110" Background="Transparent" Foreground="White" BorderThickness="0" Cursor="Hand"/>
+            <Button Content="Install" Width="110" Background="Transparent" Foreground="White" BorderThickness="0"/>
             <Button Content="Tweaks" Width="110" Background="#2d303d" Foreground="Cyan" BorderThickness="1" BorderBrush="Cyan"/>
             <Button Content="Config" Width="110" Background="Transparent" Foreground="White" BorderThickness="0"/>
             <Button Content="Updates" Width="110" Background="Transparent" Foreground="White" BorderThickness="0"/>
-            <Button Content="MicroWin" Width="110" Background="Transparent" Foreground="White" BorderThickness="0"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="25,15">
-            <TextBlock Text="Recommended Selections:" Foreground="DodgerBlue" FontWeight="Bold" Margin="0,0,0,10"/>
+        <StackPanel Grid.Row="1" Margin="25,15" Orientation="Vertical">
+            <TextBlock Text="Seleções Recomendadas:" Foreground="DodgerBlue" FontWeight="Bold" Margin="0,0,0,10"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="BtnStandard" Content="Standard (Safe)" Width="140" Height="32" Background="#2d303d" Foreground="White" Margin="0,0,10,0" Cursor="Hand"/>
-                <Button x:Name="BtnMinimal" Content="Minimal (Gaming)" Width="140" Height="32" Background="#2d303d" Foreground="White" Margin="0,0,10,0" Cursor="Hand"/>
-                <Button x:Name="BtnClear" Content="Clear All" Width="140" Height="32" Background="#2d303d" Foreground="White" Cursor="Hand"/>
+                <Button x:Name="BtnStandard" Content="Standard (Seguro)" Width="140" Height="32" Background="#2d303d" Foreground="White" Margin="0,0,10,0"/>
+                <Button x:Name="BtnMinimal" Content="Minimal (Gaming)" Width="140" Height="32" Background="#2d303d" Foreground="White" Margin="0,0,10,0"/>
+                <Button x:Name="BtnClear" Content="Limpar Tudo" Width="140" Height="32" Background="#2d303d" Foreground="White"/>
             </StackPanel>
         </StackPanel>
 
@@ -38,37 +37,30 @@ $xml = @"
 
                 <StackPanel Grid.Column="0" Margin="20">
                     <TextBlock Text="Essential Tweaks" Foreground="RoyalBlue" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
-                    <CheckBox x:Name="chkRestore" Content="Create Restore Point" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkTemp" Content="Delete Temporary Files" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkTele" Content="Disable Telemetry" IsChecked="True" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkDVR" Content="Disable GameDVR (FPS Boost)" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkPower" Content="Enable Lost e Vinizin Oprimizer Power Plan" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkDisk" Content="Optimize Disk &amp; TRIM" Foreground="White" Margin="0,5"/>
-                    
-                    <TextBlock Text="Advanced Tweaks" Foreground="OrangeRed" FontSize="18" FontWeight="Bold" Margin="0,30,0,15"/>
-                    <CheckBox x:Name="chkEdge" Content="Remove Edge &amp; WebView" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkApps" Content="Disable Background Apps" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkIPv6" Content="Disable IPv6" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkRestore" Content="Criar Ponto de Restauração" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkTemp" Content="Limpar Arquivos Temporários" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkTele" Content="Desativar Telemetria" IsChecked="True" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkPower" Content="Ativar Modo Lost e Vinizin Oprimizer" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkDisk" Content="Otimizar Disco (TRIM/SSD)" Foreground="White" Margin="0,5"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="20">
                     <TextBlock Text="Customize Preferences" Foreground="RoyalBlue" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
-                    <CheckBox x:Name="chkDark" Content="System Dark Theme" IsChecked="True" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkMouse" Content="Disable Mouse Acceleration" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkHidden" Content="Show Hidden Files" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkNet" Content="Gaming Network Tweak" Foreground="White" Margin="0,5"/>
-                    
-                    <TextBlock Text="Windows 11 Only" Foreground="Cyan" FontSize="18" FontWeight="Bold" Margin="0,30,0,15"/>
-                    <CheckBox x:Name="chkWidgets" Content="Disable Widgets &amp; Chat" Foreground="White" Margin="0,5"/>
-                    <CheckBox x:Name="chkMenu" Content="Win 10 Classic Context Menu" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkDark" Content="Ativar Modo Escuro" IsChecked="True" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkMouse" Content="Desativar Aceleração do Mouse" Foreground="White" Margin="0,5"/>
+                    <CheckBox x:Name="chkNet" Content="Otimização de Rede para Jogos" Foreground="White" Margin="0,5"/>
+                    <TextBlock Text="Windows 11" Foreground="Cyan" FontSize="18" FontWeight="Bold" Margin="0,25,0,15"/>
+                    <CheckBox x:Name="chkMenu" Content="Menu de Contexto Clássico" Foreground="White" Margin="0,5"/>
                 </StackPanel>
             </Grid>
         </ScrollViewer>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" Background="#1c1e26" VerticalAlignment="Center" Padding="30,0">
-            <Button x:Name="RunBtn" Content="RUN TWEAKS" Width="220" Height="45" Background="RoyalBlue" Foreground="White" FontWeight="Bold" Margin="0,0,20,0" Cursor="Hand"/>
-            <Button x:Name="UndoBtn" Content="UNDO TWEAKS" Width="220" Height="45" Background="#2d303d" Foreground="White" FontWeight="Bold" Cursor="Hand"/>
-        </StackPanel>
+        <Grid Grid.Row="3" Background="#1c1e26">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="25,0,0,0">
+                <Button x:Name="RunBtn" Content="EXECUTAR OTIMIZAÇÃO" Width="250" Height="45" Background="RoyalBlue" Foreground="White" FontWeight="Bold" Margin="0,0,20,0"/>
+                <Button x:Name="UndoBtn" Content="DESFAZER" Width="250" Height="45" Background="#2d303d" Foreground="White" FontWeight="Bold"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
 "@
@@ -76,30 +68,27 @@ $xml = @"
 $reader = [XML.XmlReader]::Create([System.IO.StringReader]$xml)
 $window = [Windows.Markup.XamlReader]::Load($reader)
 
-# --- BOTÕES DE SELEÇÃO ---
+# --- FUNÇÕES DOS BOTÕES ---
 $window.FindName("BtnStandard").Add_Click({
     $window.FindName("chkRestore").IsChecked = $true
     $window.FindName("chkTemp").IsChecked = $true
-    $window.FindName("chkPower").IsChecked = $true
+    $window.FindName("chkTele").IsChecked = $true
 })
 
-# --- EXECUÇÃO ---
+$window.FindName("BtnClear").Add_Click({
+    $window.FindName("chkRestore").IsChecked = $false
+    $window.FindName("chkTemp").IsChecked = $false
+    $window.FindName("chkPower").IsChecked = $false
+})
+
 $RunBtn = $window.FindName("RunBtn")
 $RunBtn.Add_Click({
     if ($window.FindName("chkPower").IsChecked) {
-        Write-Host "Configurando Plano: Lost e Vinizin Oprimizer..." -ForegroundColor Yellow
-        # Importa o Desempenho Máximo
         $guid = (powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61).Split(' ')[-1]
-        # Renomeia o plano
         powercfg -changename $guid "Lost e Vinizin Oprimizer"
-        # Ativa o plano
         powercfg /setactive $guid
     }
-    
-    if ($window.FindName("chkTemp").IsChecked) { Remove-Item -Path "$env:TEMP\*" -Recurse -Force -ErrorAction SilentlyContinue }
-    if ($window.FindName("chkNet").IsChecked) { netsh int tcp set global autotuninglevel=disabled; ipconfig /flushdns }
-
-    [Windows.Forms.MessageBox]::Show("Otimizações concluídas! O plano de energia 'Lost e Vinizin Oprimizer' foi ativado.", "Lost Engine")
+    [Windows.Forms.MessageBox]::Show("Otimização concluída!", "Lost Engine")
 })
 
 $window.ShowDialog()
